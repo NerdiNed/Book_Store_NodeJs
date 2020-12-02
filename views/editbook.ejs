@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Book Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#03a6f3">
+    <%- include('partials/htmlCss')%>
+</head>
+
+<body>
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3"><a href="#" class="web-url">www.bookstore.com</a></div>
+                    <div class="col-md-6">
+                        <h5>Free Shipping Over $99 + 3 Free Samples With Every Order</h5>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="ph-number">Call : 800 1234 5678</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-menu">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="index.html"><img src="/images/logo.png" alt="logo"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="navbar-item">
+                                <a href="index.html" class="nav-link">Home</a>
+                            </li>
+                            <li class="navbar-item">
+                                <a href="shop.html" class="nav-link">Shop</a>
+                            </li>
+                            <li class="navbar-item">
+                                <a href="about.html" class="nav-link">About</a>
+                            </li>
+                            <li class="navbar-item">
+                                <a href="faq.html" class="nav-link">FAQ</a>
+                            </li>
+                            <li class="navbar-item active">
+                                <a href="login.html" class="nav-link">Login</a>
+                            </li>
+                        </ul>
+                        <div class="cart my-2 my-lg-0">
+                            <span>
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                            <span class="quntity">3</span>
+                        </div>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search here..."
+                                aria-label="Search">
+                            <span class="fa fa-search"></span>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="breadcrumb">
+        <div class="container">
+            <a class="breadcrumb-item" href="index.html">Home</a>
+            <span class="breadcrumb-item active">Register</span>
+        </div>
+    </div>
+    <section class="static about-sec">
+        <div class="container">
+            <h1>My Account / Add Book</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's printer took a galley of type and scrambled it to make a type specimen book. It has survived
+                not only fiveLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem </p>
+            <div class="form">
+                <form>
+                    <div class="form-group">
+                        <label for="bookTitleInp">Book Title</label>
+                        <input type="text" class="form-control" id="bookTitleInp" placeholder="Book Title" value="<%=book.title%>">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Book Images</label>
+                        <div class="row">
+                        <%for(let i = 0; i < book.imgs.length; i++) {%>
+                            <div class="col-md-3">
+                                <a href="#" class="deleteImg">X</a>
+                                <img class="bookimg" src="<%=book.imgs[i]%>" alt="">
+                            </div>
+                        <%}%>
+                        </div>
+                        <input type="file" class="form-control-file" multiple id="bookImgsInp"
+                            accept="image/x-png,image/gif,image/jpeg">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Book PDF</label>
+                        <span class="badge badge-default"><%=book.pdfUrl.substr(book.pdfUrl.lastIndexOf('/')+1)%>  <a href="#" id="deletePdf">X</a></span>
+                        <input type="file" class="form-control-file"  id="bookPdfInp" accept="application/pdf" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookDescriptionInp">Book Description</label>
+                        <textarea class="form-control" id="bookDescriptionInp"><%=book.description%></textarea>
+                    </div>
+                    <button class="btn btn-success mt-3" id="bookSaveBtn">save</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="address">
+                        <h4>Our Address</h4>
+                        <h6>The BookStore Theme, 4th Store
+                            Beside that building, USA</h6>
+                        <h6>Call : 800 1234 5678</h6>
+                        <h6>Email : info@bookstore.com</h6>
+                    </div>
+                    <div class="timing">
+                        <h4>Timing</h4>
+                        <h6>Mon - Fri: 7am - 10pm</h6>
+                        <h6>​​Saturday: 8am - 10pm</h6>
+                        <h6>​Sunday: 8am - 11pm</h6>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="navigation">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-conditions.html">Terms</a></li>
+                            <li><a href="products.html">Products</a></li>
+                        </ul>
+                    </div>
+                    <div class="navigation">
+                        <h4>Help</h4>
+                        <ul>
+                            <li><a href="">Shipping & Returns</a></li>
+                            <li><a href="privacy-policy.html">Privacy</a></li>
+                            <li><a href="faq.html">FAQ’s</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form">
+                        <h3>Quick Contact us</h3>
+                        <h6>We are now offering some good discount
+                            on selected books go and shop them</h6>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input placeholder="Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" placeholder="Email" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <textarea placeholder="Messege"></textarea>
+                                </div>
+                                <div class="col-md-12">
+                                    <button class="btn black">Alright, Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>(C) 2017. All Rights Reserved. BookStore Wordpress Theme</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="share align-middle">
+                            <span class="fb"><i class="fa fa-facebook-official"></i></span>
+                            <span class="instagram"><i class="fa fa-instagram"></i></span>
+                            <span class="twitter"><i class="fa fa-twitter"></i></span>
+                            <span class="pinterest"><i class="fa fa-pinterest"></i></span>
+                            <span class="google"><i class="fa fa-google-plus"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="modal" tabindex="-1" role="dialog" id="resultModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/htmlJs')%>
+
+    <script src="/tinymce/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+
+selector: '#bookDescriptionInp',
+/* theme of the editor */
+theme: "silver",
+skin: "oxide-dark",
+
+/* width and height of the editor */
+width: "100%",
+height: 300,
+
+/* display statusbar */
+statubar: true,
+
+/* plugin */
+plugins: [
+    "advlist autolink link image lists charmap print preview hr anchor pagebreak",
+    "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+    "save table contextmenu directionality emoticons template paste textcolor"
+],
+
+/* toolbar */
+toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons",
+
+/* style */
+style_formats: [{
+        title: "Headers",
+        items: [{
+                title: "Header 1",
+                format: "h1"
+            },
+            {
+                title: "Header 2",
+                format: "h2"
+            },
+            {
+                title: "Header 3",
+                format: "h3"
+            },
+            {
+                title: "Header 4",
+                format: "h4"
+            },
+            {
+                title: "Header 5",
+                format: "h5"
+            },
+            {
+                title: "Header 6",
+                format: "h6"
+            }
+        ]
+    },
+    {
+        title: "Inline",
+        items: [{
+                title: "Bold",
+                icon: "bold",
+                format: "bold"
+            },
+            {
+                title: "Italic",
+                icon: "italic",
+                format: "italic"
+            },
+            {
+                title: "Underline",
+                icon: "underline",
+                format: "underline"
+            },
+            {
+                title: "Strikethrough",
+                icon: "strikethrough",
+                format: "strikethrough"
+            },
+            {
+                title: "Superscript",
+                icon: "superscript",
+                format: "superscript"
+            },
+            {
+                title: "Subscript",
+                icon: "subscript",
+                format: "subscript"
+            },
+            {
+                title: "Code",
+                icon: "code",
+                format: "code"
+            }
+        ]
+    },
+    {
+        title: "Blocks",
+        items: [{
+                title: "Paragraph",
+                format: "p"
+            },
+            {
+                title: "Blockquote",
+                format: "blockquote"
+            },
+            {
+                title: "Div",
+                format: "div"
+            },
+            {
+                title: "Pre",
+                format: "pre"
+            }
+        ]
+    },
+    {
+        title: "Alignment",
+        items: [{
+                title: "Left",
+                icon: "alignleft",
+                format: "alignleft"
+            },
+            {
+                title: "Center",
+                icon: "aligncenter",
+                format: "aligncenter"
+            },
+            {
+                title: "Right",
+                icon: "alignright",
+                format: "alignright"
+            },
+            {
+                title: "Justify",
+                icon: "alignjustify",
+                format: "alignjustify"
+            }
+        ]
+    }
+]
+});
+
+
+document.querySelectorAll('.deleteImg').forEach(element => {
+        element.addEventListener('click', e => {
+            e.preventDefault()
+            e.target.parentElement.remove()
+        })
+    })
+    document.querySelector('#deletePdf').addEventListener('click', e => {
+        e.preventDefault()
+        e.target.parentElement.remove()
+        // enable pdf file upload
+        document.querySelector('#bookPdfInp').disabled = false
+    })
+
+    document.querySelector('#bookSaveBtn').addEventListener('click', e => {
+        e.preventDefault()
+        const bookTitle = document.querySelector('#bookTitleInp').value.trim()
+        if (!bookTitle) {
+            showModal(true, 'Book title is empty', 'Book Title should not be empty')
+            // return gonna stop the function idf the book title is empty
+            return
+        }
+        const oldImgsElements = document.querySelectorAll('.bookimg')
+        const newBookImgs = document.querySelector('#bookImgsInp').files
+        // check if the user upload images or left some old images
+        if (oldImgsElements.length == 0 && newBookImgs.length == 0) {
+            showModal(true, 'images Error', 'you can not save your book without images')
+            return
+        }
+        const deletePdf = document.querySelector('#deletePdf')
+        const bookPdf = document.querySelector('#bookPdfInp').files
+        // check if the user upload or left the pdf file
+        if (!deletePdf && bookPdf.length == 0 ) {
+            showModal(true, 'Pdf Error', 'you need either to upload a pdf file or to leave the old one')
+            return
+        } 
+        // collect the data to be sent to the server side
+        const fd = new FormData()
+        // add book id to fd
+        fd.append('bookid', '<%=book.id%>')
+        fd.append('newBookTitle', bookTitle) 
+        // collect old images urls
+        const oldImgsArr = []
+        oldImgsElements.forEach(img => {
+            oldImgsArr.push(img.src)
+        })
+        // convert oldImgsArr to string to be able add it in fd 
+        // because FormData eccept only strings 
+        fd.append('oldImgsUrls', JSON.stringify(oldImgsArr))
+
+        // add new book images to fd
+        for (let i = 0; i < newBookImgs.length; i++) {
+            fd.append('bookImg' + i, newBookImgs[i])
+            
+        }
+        
+        // add the upload pdf file to fd IF exist
+        if (bookPdf.length) {
+            fd.append('bookPdf', bookPdf[0])
+        }
+        // get book description from html editor tinymce and append it to fd
+        fd.append('bookDescription', tinymce.get("bookDescriptionInp").getContent())
+        // disable save btn
+        btnWait(e.target, true, 'Saving...')
+        fetch('/admin/editbook',{
+            method: 'POST',
+            body: fd
+        }).then(response => {
+            btnWait(e.target, false, 'Save')
+            if (response.status == 200) {
+                response.json().then(data => {
+                    if (data === 1) {
+                        showModal(false, 'success update', 'your book updated successfuly')
+                    } else {
+                        showModal(true, ' server error', 'call the admin because of this error')
+                    }
+                }).catch(error => {
+                    showModal(true, ' server error', 'call the admin because of this error')
+                })
+            } else {
+                showModal(true, 'Error', 'can not send the data')
+            }
+        }).catch(error => {
+            showModal(true, 'Error', 'can not send the data')
+            btnWait(e.target, false, 'Save')
+        })
+
+    })
+// document.querySelector('#bookSaveBtn').addEventListener('click', e => {
+// e.preventDefault()
+// const bookTitle = document.querySelector('#bookTitleInp').value
+// const bookDescription = tinymce.get("bookDescriptionInp").getContent();
+// const bookImgs = document.querySelector('#bookImgsInp').files
+// const bookPdf = document.querySelector('#bookPdfInp').files[0]
+
+// // console.log(bookTitle)
+// // console.log(bookDescription)
+// // console.log(bookImgs)
+// // console.log(bookPdf)
+// const fd = new FormData()
+// fd.append('bookTitle', bookTitle)
+// fd.append('bookDescription', bookDescription)
+// for (let i = 0; i < bookImgs.length; i++) {
+//     fd.append('bookImg' + i, bookImgs[i])
+// }
+// fd.append('bookPdf', bookPdf)
+
+// let url = '/admin/addbook'
+// // send fd to server side using fetch
+// fetch(url , {
+//     method: 'POST',
+//     body: fd
+// }).then(response => {
+// // code here to show modal 
+// // if response data was 1 
+// // show success modal and clear the inputs
+// // else if it was 2 
+// // show error modal missing some entries
+
+// // check if response is ok
+// if (response.status == 200) {
+//     // get response data
+// response.json().then(data => {
+// switch (data) {
+//     case 1:
+//         showModal(false, 'success', 'The book saved correctly and it will be shown in books gallery')
+//         document.querySelector('#bookTitleInp').value = ''
+//         tinymce.get("bookDescriptionInp").setContent('')
+//         document.querySelector('#bookImgsInp').value = ''
+//         document.querySelector('#bookPdfInp').value = ''
+//         break;
+//     case 2:
+//         showModal(true, 'Error', 'Some entries are missing, make sure to enter all required data')
+//         break;
+//     case 3:
+//         showModal(true, 'Book title is exist', 'Book title is exist, please type another book title')
+//         break;
+//     default:
+//         break;
+// }
+// }).catch(error => {
+//     showModal(true, 'Error', 'unknown response format')
+// })
+// } else {
+//     showModal(true, 'Error', 'could not send the data')
+// }
+
+
+// }).catch(error => {
+//     showModal(true, 'Error', 'can not send the data')
+// })
+// })
+    
+    
+    </script>
+</body>
+
+</html>

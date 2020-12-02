@@ -1,0 +1,24 @@
+{
+    "users": [{
+        "id": 1,
+        "email": "shalala@yahoo.com",
+        "password": "sha1$1aa4022d$1$781acfc06f1f1b8615d22d6488d1472dfeeca360"
+    }, {
+        "id": 2,
+        "email": "shalala2@yahoo.com",
+        "password": "sha1$1aa4022d$1$781acfc06f1f1b8615d22d6488d1472dfeeca360"
+    }, {
+        "id": 3,
+        "email": "shalala3@yahoo.com",
+        "password": "sha1$1aa4022d$1$781acfc06f1f1b8615d22d6488d1472dfeeca360"
+    }, {
+        "id": 4,
+        "email": "ddd@gg.ss",
+        "password": "sha1$424d20ed$1$6454d2842f1fca597a7588c3dd1fbed9b4732f98"
+    }, {
+        "id": 5,
+        "email": "ddd1@gg.ss",
+        "password": "sha1$1aa4022d$1$781acfc06f1f1b8615d22d6488d1472dfeeca360"
+    }],
+    "newId": 6
+}

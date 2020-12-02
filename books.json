@@ -1,0 +1,46 @@
+{
+    "books": [{
+        "id": 1,
+        "title": "book",
+        "description": "<p>zczxczxc</p>",
+        "imgs": ["/uploadedfiles/book_1_0.png"],
+        "pdfUrl": "/uploadedfiles/book_1.pdf",
+        "userid": 1
+    }, {
+        "id": 2,
+        "title": "c pointers",
+        "description": "<p>this book explains pointer on c language</p>",
+        "imgs": ["/uploadedfiles/c_pointers_1_0.png", "/uploadedfiles/c_pointers_1_1.jpg", "/uploadedfiles/c_pointers_1_2.jpg"],
+        "pdfUrl": "/uploadedfiles/c_pointers_1.pdf",
+        "userid": 1
+    }, {
+        "id": 3,
+        "title": "java oop",
+        "description": "<p>this book explains about oop in Java</p>",
+        "imgs": ["/uploadedfiles/java_oop_1_0.png", "/uploadedfiles/java_oop_1_1.jpg"],
+        "pdfUrl": "/uploadedfiles/java_oop_1.pdf",
+        "userid": 1
+    }, {
+        "id": 4,
+        "title": "new book",
+        "description": "<p style=\"text-align: center;\"><strong>this is my new book</strong></p>\n<ol>\n<li>introduction</li>\n<li>c pointers</li>\n<li>use c pointers</li>\n</ol>",
+        "imgs": ["/uploadedfiles/new_book_1_0.jpg", "/uploadedfiles/new_book_1_1.jpg", "/uploadedfiles/new_book_1_2.jpg", "/uploadedfiles/new_book_1_3.jpg", "/uploadedfiles/new_book_1_4.jpg", "/uploadedfiles/new_book_1_5.jpg"],
+        "pdfUrl": "/uploadedfiles/new_book_1.pdf",
+        "userid": 1
+    }, {
+        "id": 5,
+        "title": "DCI certificate",
+        "description": "<p>this is an example about DCI certificate</p>",
+        "imgs": ["/uploadedfiles/DCI_certificate_1_0.jpg", "/uploadedfiles/DCI_certificate_1_1.jpg", "/uploadedfiles/DCI_certificate_1_2.jpg"],
+        "pdfUrl": "/uploadedfiles/DCI_certificate_1.pdf",
+        "userid": 1
+    }, {
+        "id": 6,
+        "title": "sdsd",
+        "description": "<p>sdsdsdsd</p>",
+        "imgs": ["/uploadedfiles/sdsd_1_0.png"],
+        "pdfUrl": "/uploadedfiles/sdsd_1.pdf",
+        "userid": 1
+    }],
+    "newid": 7
+}
